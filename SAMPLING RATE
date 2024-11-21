@@ -1,0 +1,16 @@
+clc;
+close all;
+clear all;
+fx=20;
+Tx=1/fx;
+tx=0:Tx:1;
+x=0.7*sin(2*pi*tx);
+y=resample(x,5,4);
+ty=(0:(length(y)-1))*4*Tx/5;
+figure(1);
+stem(ty,y,'-.r');
+title('org & i/d');
+legend('org ','resampled i/d');
+xlabel('time(s)');
+ylabel('amplitude');
+axis([0,1,-1,1]);
